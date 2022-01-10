@@ -13,6 +13,7 @@ import { groq } from "next-sanity";
 
 const team = ({ data }) => {
   const allTeam = data.page || [];
+  console.log(allTeam);
   return (
     <>
       <SEO
@@ -84,8 +85,7 @@ const team = ({ data }) => {
 
 export default team;
 
-const teamQuery = groq`*[_type=="person"]
-`;
+const teamQuery = groq`*[_type=="person"] | order(sortOrder asc)`;
 
 export async function getStaticProps() {
   const page = await getClient().fetch(teamQuery);

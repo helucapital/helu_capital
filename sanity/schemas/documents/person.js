@@ -8,6 +8,12 @@ export default {
       title: "Name",
       type: "string",
     },
+    // schema number for sort order field
+    {
+      name: "sortOrder",
+      title: "Sort Order",
+      type: "number",
+    },
     {
       name: "position",
       title: "Position",
@@ -32,10 +38,18 @@ export default {
     },
     { name: "body", title: "Body", type: "blockContent" },
   ],
+  orderings: [
+    {
+      title: "Order Number",
+      name: "sortOrderNumber",
+      by: [{ field: "sortOrder", direction: "asc" }],
+    },
+  ],
   preview: {
     select: {
       title: "name",
       media: "image",
+      subtitle: "sortOrder",
     },
   },
 };
