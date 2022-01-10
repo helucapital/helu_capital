@@ -39,6 +39,7 @@ const serializers = {
       },
     }}  {...node} />,
     carousel: ({ node }) => <Carousel {...node} />,
+
   },
 };
 

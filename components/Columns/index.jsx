@@ -2,21 +2,36 @@ import React from 'react'
 import Section from '../Section'
 import Box from '../Box'
 import BasePortableText from '@sanity/block-content-to-react';
+import Button from '../Button'
 import { styled } from '../../theme/stitches.config'
+
+const serializers2 = {
+  types: {
+    button: (props) => (
+      <Button {...props} css={{ mt: '$4' }}>{props.node.text}</Button>
+    ),
+  },
+}
+
 const serializers = {
   types: {
+    button: (props) => (
+      <h1>ass</h1>
+    ),
     column: (props) => (
-      <BasePortableText blocks={props.node.body} />
+      <BasePortableText blocks={props.node.body} serializers={serializers2} />
     ),
   },
 }
 
 const Columns = ({ children, node }) => {
+  console.log(node.columns)
   const columnCount = node.columns.length
   return (
     <Section css={{
       maxWidth: '$4',
       margin: 'auto',
+      px: '$4'
     }}>
       <StyledBasePortableText
         columns={columnCount}

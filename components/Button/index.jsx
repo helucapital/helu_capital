@@ -7,7 +7,7 @@ const Button = ({ children, ...props }) => {
   let link
   let path;
 
-  console.log(props.node)
+
 
 
   const isExternalLink = props.node?.link && !props.node.link_type
