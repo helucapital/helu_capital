@@ -1,0 +1,32 @@
+{
+  "name": "helu_next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "serve": "next build && next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/open-sans": "^4.5.2",
+    "@fontsource/source-code-pro": "^4.5.1",
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-dialog": "^0.1.5",
+    "@radix-ui/react-icons": "^1.0.3",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^2.23.2",
+    "@sanity/image-url": "^1.0.1",
+    "@stitches/react": "^1.2.6",
+    "framer-motion": "^5.5.6",
+    "next": "^12.0.7",
+    "next-sanity": "^0.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "swiper": "^7.4.1"
+  }
+}
