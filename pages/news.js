@@ -54,10 +54,11 @@ const Posts = ({ data }) => {
             //use grid for a 3x3 grid
             display: "flex",
             justifyContent: "center",
+            flexWrap: "wrap",
           }}
         >
           {allPosts.map((item) => (
-            <Box>
+            <Box css={{ mb: "$4" }}>
               <Link href={`/posts/${item.slug.current}`}>
                 <a>
                   <Box
@@ -65,7 +66,7 @@ const Posts = ({ data }) => {
                       display: "flex",
                       flexDirection: "row",
 
-                      boxShadow: "$3",
+                      boxShadow: "$2",
                       br: "$1",
                       "@bp2": {
                         flexDirection: "column",

@@ -9,6 +9,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SEO from "../../components/Seo";
 import Text from "../../components/Text";
+import Box from "../../components/Box";
 
 const Team = ({ person }) => {
   const { name, position, image, body = [] } = person;
@@ -28,9 +29,11 @@ const Team = ({ person }) => {
           delay: 0.3,
         }}
         css={{
-          py: "$8",
+          pt: "$12",
+          pb: "$12",
           margin: "auto",
           maxWidth: "$3",
+          display: "flex",
 
           "h3, h4": {
             mt: "$7",
@@ -38,12 +41,19 @@ const Team = ({ person }) => {
           // "h2, h4, h6": {
           //   color: "$primary",
           // },
+
+          "@bp2": {
+            flexWrap: "wrap",
+            py: "$6",
+          },
         }}
       >
-        <Text as="h2">{name}</Text>
-        {image && <StyledImage src={urlFor(image).width(300).url()} />}
-        <Text as="h6">{position}</Text>
-        <PortableText blocks={body} />
+        {image && <StyledImage src={urlFor(image).width(500).url()} />}
+        <Box>
+          <Text as="h2">{name}</Text>
+          <Text as="h6">{position}</Text>
+          <PortableText blocks={body} />
+        </Box>
       </Section>
       <Footer />
     </>
@@ -81,15 +91,16 @@ export default Team;
 
 const StyledImage = styled("img", {
   maxWidth: "300px",
-  float: "right",
-  mx: "$7",
+  objectFit: "cover",
+  mr: "$6",
   mb: "$5",
-  "@bp2": {
+  "@bp1": {
     margin: "auto",
+    pb: "$4",
     float: "none",
     width: "100%",
     maxWidth: "none",
-    maxHeight: "300px",
+    maxHeight: "340px",
     objectFit: "cover",
     objectPosition: "top",
   },

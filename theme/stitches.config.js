@@ -17,12 +17,12 @@ const {
     colors: {
       ...whiteA,
       ...blackA,
-      primary: "#B0A35F",
+      primary: "#11181D",
       primary_dark: "#90854c",
       secondary: "#5F99B0",
       secondary_dark: "#497586",
       muted: "#f6f6f6",
-      dark: "#656565",
+      dark: "#11181D",
 
       // Semantic colors
       hiContrast: "$slate12",

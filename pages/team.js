@@ -104,7 +104,7 @@ const StyledImage = styled("img", {
   width: "300px",
   height: "320px",
   objectFit: "cover",
-  filter: "grayscale(1)",
+  // filter: "grayscale(1)",
   objectPosition: "top",
   transition: "filter .2s ease-in-out",
   "&:hover": {
