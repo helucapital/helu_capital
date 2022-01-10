@@ -83,6 +83,9 @@ const {
       2: "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;",
       3: "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;",
       4: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;",
+      5: "0.2px 0.1px 0.3px hsl(0deg 0% 0% / 0), 0.4px 0.3px 0.8px hsl(0deg 0% 0% / 0.1), 0.8px 0.7px 1.6px hsl(0deg 0% 0% / 0.19)",
+      6: "0.2px 0.1px 0.3px hsl(0deg 0% 0% / 0), 0.8px 0.7px 1.6px hsl(0deg 0% 0% / 0.05), 1.3px 1.2px 2.7px hsl(0deg 0% 0% / 0.1), 2.3px 2px 4.6px hsl(0deg 0% 0% / 0.14), 3.9px 3.5px 7.9px hsl(0deg 0% 0% / 0.19)",
+      7: "0.2px 0.1px 0.3px hsl(0deg 0% 0% / 0), 1.9px 1.7px 3.8px hsl(0deg 0% 0% / 0.02), 3.4px 3px 6.8px hsl(0deg 0% 0% / 0.04), 4.8px 4.3px 9.7px hsl(0deg 0% 0% / 0.07), 6.4px 5.6px 12.8px hsl(0deg 0% 0% / 0.09), 8.3px 7.3px 16.6px hsl(0deg 0% 0% / 0.11), 10.7px 9.5px 21.5px hsl(0deg 0% 0% / 0.13), 13.8px 12.2px 27.6px hsl(0deg 0% 0% / 0.16), 17.8px 15.8px 35.7px hsl(0deg 0% 0% / 0.18), 22.9px 20.3px 45.9px hsl(0deg 0% 0% / 0.2)",
     },
     space: {
       0: "4px",

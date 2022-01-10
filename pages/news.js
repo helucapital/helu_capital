@@ -58,7 +58,7 @@ const Posts = ({ data }) => {
           }}
         >
           {allPosts.map((item) => (
-            <Box css={{ mb: "$4" }}>
+            <Box css={{ mb: "$4", boxShadow: "$6" }}>
               <Link href={`/posts/${item.slug.current}`}>
                 <a>
                   <Box
@@ -66,7 +66,6 @@ const Posts = ({ data }) => {
                       display: "flex",
                       flexDirection: "row",
 
-                      boxShadow: "$2",
                       br: "$1",
                       "@bp2": {
                         flexDirection: "column",
@@ -125,9 +124,11 @@ export async function getStaticProps() {
 
 const StyledImage = styled("img", {
   objectFit: "cover",
-  width: "auto",
+
   bblr: "$1",
   btlr: "$1",
+  width: "350px",
+
   "@bp2": {
     width: "100%",
     borderRadius: "0",
