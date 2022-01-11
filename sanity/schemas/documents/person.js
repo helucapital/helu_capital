@@ -23,6 +23,7 @@ export default {
       name: "slug",
       title: "Slug",
       type: "slug",
+      validation: (Rule) => Rule.required().error(`No Slug has been added.`),
       options: {
         source: "name",
         maxLength: 96,
