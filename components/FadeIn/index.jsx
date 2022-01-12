@@ -7,8 +7,8 @@ const FadeIn = ({ children, css, delay }) => {
     <Wrapper
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-200px" }}
-      transition={{ duration: delay || 0.8 }}
+      viewport={{ once: true }}
+      transition={{ duration: delay || 1.2 }}
       variants={{
         visible: { x: 0, opacity: 1 },
         hidden: { x: -150, opacity: 0 }
