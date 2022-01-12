@@ -3,20 +3,16 @@ import BasePortableText from '@sanity/block-content-to-react';
 import { styled } from '../../theme/stitches.config'
 
 import serializers from './Serializers';
-import Box from '../Box'
+import FadeIn from '../FadeIn'
 
 const PortableText = ({ blocks, css, className }) => (
-  <Box initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{
-      delay: 0.3,
-    }}>
+  <FadeIn>
 
     <Wrapper
       blocks={blocks}
       serializers={serializers} css={css} className={className}
     />
-  </Box>
+  </FadeIn>
 );
 
 export default PortableText;

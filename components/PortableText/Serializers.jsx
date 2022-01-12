@@ -5,6 +5,7 @@ import Content from '../Content'
 import Columns from '../Columns'
 import Image from '../Image'
 import Carousel from '../Carousel'
+import FadeIn from '../FadeIn'
 
 const serializers = {
   marks: {
@@ -33,12 +34,16 @@ const serializers = {
   types: {
     pageBuilderContent: ({ node }) => <Content node={node} />,
     pageBuilderColumns: ({ node }) => <Columns node={node} />,
-    mainImage: ({ node }) => <Image css={{
-      height: '500px', '@bp2': {
-        height: 'auto'
-      },
-    }}  {...node} />,
-    carousel: ({ node }) => <Carousel {...node} />,
+    mainImage: ({ node }) => <FadeIn>
+      <Image css={{
+        height: '500px', '@bp2': {
+          height: 'auto'
+        },
+      }}  {...node} />
+    </FadeIn>,
+    carousel: ({ node }) => <FadeIn>
+      <Carousel {...node} />,
+    </FadeIn>
 
   },
 };

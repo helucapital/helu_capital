@@ -10,7 +10,7 @@ globalStyles();
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence>
       <Component {...pageProps} />
     </AnimatePresence>
   );

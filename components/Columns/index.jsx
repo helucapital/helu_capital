@@ -3,6 +3,7 @@ import Section from '../Section'
 import Box from '../Box'
 import BasePortableText from '@sanity/block-content-to-react';
 import Button from '../Button'
+import FadeIn from '../FadeIn'
 import { styled } from '../../theme/stitches.config'
 
 const serializers2 = {
@@ -25,7 +26,7 @@ const serializers = {
 }
 
 const Columns = ({ children, node }) => {
-  console.log(node.columns)
+
   const columnCount = node.columns.length
   return (
     <Section css={{
@@ -33,10 +34,13 @@ const Columns = ({ children, node }) => {
       margin: 'auto',
       px: '$4'
     }}>
-      <StyledBasePortableText
-        columns={columnCount}
-        serializers={serializers} blocks={node.columns}
-      />
+      <FadeIn>
+
+        <StyledBasePortableText
+          columns={columnCount}
+          serializers={serializers} blocks={node.columns}
+        />
+      </FadeIn>
     </Section>
   )
 }

@@ -9,6 +9,7 @@ import Section from "../components/Section";
 import Box from "../components/Box";
 import Text from "../components/Text";
 import Modal from "../components/Modal";
+import FadeIn from "../components/FadeIn";
 import { urlFor } from "../lib/sanity";
 import { groq } from "next-sanity";
 const Properties = ({ data }) => {
@@ -68,7 +69,7 @@ const Properties = ({ data }) => {
           }}
         >
           {allProperties.map((item) => (
-            <Box>
+            <FadeIn>
               <Modal data={item}>
                 <StyledImage
                   src={urlFor(item.image).width(300).height(300)}
@@ -85,7 +86,7 @@ const Properties = ({ data }) => {
                   {item.city_state}
                 </Text>
               </Modal>
-            </Box>
+            </FadeIn>
           ))}
         </Box>
       </Section>

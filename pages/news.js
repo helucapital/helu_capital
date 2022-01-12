@@ -4,11 +4,14 @@ import Link from "next/link";
 import { urlFor } from "../lib/sanity";
 import { groq } from "next-sanity";
 
+import BasePortableText from "@sanity/block-content-to-react";
+
 import Header from "../components/Header";
 import SEO from "../components/Seo";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
 import Box from "../components/Box";
+import FadeIn from "../components/FadeIn";
 import Text from "../components/Text";
 
 const Posts = ({ data }) => {
@@ -58,44 +61,46 @@ const Posts = ({ data }) => {
           }}
         >
           {allPosts.map((item) => (
-            <Box css={{ mb: "$4", boxShadow: "$6" }}>
-              <Link href={`/posts/${item.slug.current}`}>
-                <a>
-                  <Box
-                    css={{
-                      display: "flex",
-                      flexDirection: "row",
-
-                      br: "$1",
-                      "@bp2": {
-                        flexDirection: "column",
-                      },
-                    }}
-                  >
-                    <StyledImage
-                      src={urlFor(item.mainImage).width(400)}
-                      alt={item.name}
-                    />
+            <FadeIn>
+              <Box css={{ mb: "$4", boxShadow: "$6" }}>
+                <Link href={`/posts/${item.slug.current}`}>
+                  <a>
                     <Box
                       css={{
-                        p: "$6",
+                        display: "flex",
+                        flexDirection: "row",
+
+                        br: "$1",
                         "@bp2": {
-                          px: "$4",
+                          flexDirection: "column",
                         },
                       }}
                     >
-                      <Text as="h5" css={{ mt: "0" }}>
-                        {item.title}
-                      </Text>
-                      <Text size="small" css={{ wrap: "auto" }}>
-                        Sed haec quis possit intrepidus aestimare tellus. Sed
-                        haec quis possit intrepidus aestimare tellus....
-                      </Text>
+                      <StyledImage
+                        src={urlFor(item.mainImage).width(400)}
+                        alt={item.name}
+                      />
+                      <Box
+                        css={{
+                          p: "$6",
+                          "@bp2": {
+                            px: "$4",
+                          },
+                        }}
+                      >
+                        <Text as="h5" css={{ mt: "0" }}>
+                          {item.title}
+                        </Text>
+                        <StyledPortableText
+                          className="asssss"
+                          blocks={item.body[0]}
+                        />
+                      </Box>
                     </Box>
-                  </Box>
-                </a>
-              </Link>
-            </Box>
+                  </a>
+                </Link>
+              </Box>
+            </FadeIn>
           ))}
         </Box>
       </Section>
@@ -132,5 +137,14 @@ const StyledImage = styled("img", {
   "@bp2": {
     width: "100%",
     borderRadius: "0",
+  },
+});
+
+const StyledPortableText = styled(BasePortableText, {
+  "p, a": {
+    overflow: "hidden",
+    display: "-webkit-box",
+    webkitLineClamp: "3",
+    webkitBoxOrient: "vertical",
   },
 });

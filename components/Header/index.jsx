@@ -43,7 +43,7 @@ const Header = ({ seoData }) => {
       <NavItem to='/properties'>Investments</NavItem>
       <NavItem to='/news'>News</NavItem>
       <NavItem to='mailto:info@helucapital.com'>Contact</NavItem>
-      <ButtonWrapper href='https://investors.helucapital.com/login'>Investors Login</ButtonWrapper>
+      <ButtonWrapper href='https://investors.helucapital.com/login'>Investor Login</ButtonWrapper>
     </Box>
   return (
     <>

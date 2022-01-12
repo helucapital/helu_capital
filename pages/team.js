@@ -7,13 +7,14 @@ import SEO from "../components/Seo";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
 import Box from "../components/Box";
+import FadeIn from "../components/FadeIn";
 import Text from "../components/Text";
 import { urlFor } from "../lib/sanity";
 import { groq } from "next-sanity";
 
 const team = ({ data }) => {
   const allTeam = data.page || [];
-  console.log(allTeam);
+
   return (
     <>
       <SEO
@@ -61,8 +62,8 @@ const team = ({ data }) => {
             },
           }}
         >
-          {allTeam.map((item) => (
-            <Box>
+          {allTeam.map((item, index) => (
+            <FadeIn>
               <Link href={`/team/${item.slug.current}`}>
                 <a>
                   <StyledImage
@@ -74,7 +75,7 @@ const team = ({ data }) => {
                   <Text size="small">{item.position}</Text>
                 </a>
               </Link>
-            </Box>
+            </FadeIn>
           ))}
         </Box>
       </Section>
