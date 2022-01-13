@@ -47,20 +47,21 @@ const Properties = ({ data }) => {
             "@bp1": { textAlign: "center" },
           }}
         >
-          Properties
+          Active Acquisitions
         </Text>
         <Box
           css={{
             //use grid for a 3x3 grid
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(100px, 300px))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(100px, 300px))",
             gridGap: "$4",
             gridAutoRows: "minmax(auto, auto)",
             gridAutoFlow: "row dense",
-            justifyItems: "center",
-            alignItems: "center",
+
             "@bp2": {
               gridGap: "$3",
+              justifyContent: "center",
+              alignItems: "flex-start",
             },
             "@bp1": {
               justifyContent: "center",
@@ -68,26 +69,109 @@ const Properties = ({ data }) => {
             },
           }}
         >
-          {allProperties.map((item) => (
-            <FadeIn>
-              <Modal data={item}>
-                <StyledImage
-                  src={urlFor(item.image).width(300).height(300)}
-                  alt={item.name}
-                />
+          {allProperties.map(
+            (item) =>
+              item?.summary && (
+                <FadeIn>
+                  <Modal data={item}>
+                    <StyledImage
+                      src={urlFor(item.image).width(300).height(300)}
+                      alt={item.name}
+                    />
 
-                <Text css={{ color: "$dark" }} as="h5">
-                  {item.name}
-                </Text>
-                <Text
-                  css={{ color: "$primary", "@bp1": { fontWeight: "500" } }}
-                  size="small"
-                >
-                  {item.city_state}
-                </Text>
-              </Modal>
-            </FadeIn>
-          ))}
+                    <Text css={{ color: "$dark" }} as="h5">
+                      {item.name}
+                    </Text>
+                    <Text
+                      css={{
+                        color: "$primary",
+                        "@bp1": { fontWeight: "500" },
+                      }}
+                      size="small"
+                    >
+                      {item.city_state}
+                    </Text>
+                  </Modal>
+                </FadeIn>
+              )
+          )}
+        </Box>
+      </Section>
+
+      <Section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 0.3,
+        }}
+        css={{
+          py: "$8",
+          margin: "auto",
+          maxWidth: "$3",
+          h5: {
+            fontWeight: "bold",
+            mt: "$4",
+            mb: "$1",
+          },
+        }}
+      >
+        <Text
+          as="h2"
+          css={{
+            color: "$dark",
+            paddingBottom: "$3",
+            "@bp1": { textAlign: "center" },
+          }}
+        >
+          Completed Acquisitions
+        </Text>
+
+        <Box
+          css={{
+            //use grid for a 3x3 grid
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(100px, 300px))",
+            gridGap: "$4",
+            gridAutoRows: "minmax(auto, auto)",
+            gridAutoFlow: "row dense",
+
+            "@bp2": {
+              gridGap: "$3",
+              justifyContent: "center",
+              alignItems: "flex-start",
+            },
+            "@bp1": {
+              justifyContent: "center",
+              alignItems: "center",
+            },
+          }}
+        >
+          {allProperties.map(
+            (item) =>
+              !item?.summary && (
+                <FadeIn>
+                  <Modal data={item}>
+                    <StyledImage
+                      src={urlFor(item.image).width(300).height(300)}
+                      alt={item.name}
+                    />
+
+                    <Text css={{ color: "$dark" }} as="h5">
+                      {item.name}
+                    </Text>
+                    <Text
+                      css={{
+                        color: "$primary",
+                        "@bp1": { fontWeight: "500" },
+                      }}
+                      size="small"
+                    >
+                      {item.city_state}
+                    </Text>
+                  </Modal>
+                </FadeIn>
+              )
+          )}
         </Box>
       </Section>
       <Footer />
