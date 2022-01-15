@@ -57,6 +57,7 @@ const Properties = ({ data }) => {
             gridGap: "$4",
             gridAutoRows: "minmax(auto, auto)",
             gridAutoFlow: "row dense",
+            jc: "center",
 
             "@bp2": {
               gridGap: "$3",
@@ -134,6 +135,7 @@ const Properties = ({ data }) => {
             gridGap: "$4",
             gridAutoRows: "minmax(auto, auto)",
             gridAutoFlow: "row dense",
+            jc: "center",
 
             "@bp2": {
               gridGap: "$3",

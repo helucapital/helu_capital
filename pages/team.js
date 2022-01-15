@@ -53,6 +53,7 @@ const team = ({ data }) => {
             gridAutoFlow: "row dense",
             justifyItems: "center",
             alignItems: "center",
+            justifyContent: "center",
             "@bp2": {
               gridGap: "$3",
             },
