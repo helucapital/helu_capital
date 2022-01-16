@@ -14,6 +14,7 @@ import { urlFor } from "../lib/sanity";
 import { groq } from "next-sanity";
 const Properties = ({ data }) => {
   const allProperties = data.page || [];
+
   return (
     <>
       <SEO
@@ -73,7 +74,7 @@ const Properties = ({ data }) => {
           {allProperties.map(
             (item) =>
               item?.summary && (
-                <FadeIn>
+                <FadeIn key={item._id}>
                   <Modal data={item}>
                     <StyledImage
                       src={urlFor(item.image).width(300).height(300)}
@@ -151,7 +152,7 @@ const Properties = ({ data }) => {
           {allProperties.map(
             (item) =>
               !item?.summary && (
-                <FadeIn>
+                <FadeIn key={item._id}>
                   <Modal data={item}>
                     <StyledImage
                       src={urlFor(item.image).width(300).height(300)}

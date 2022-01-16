@@ -7,9 +7,6 @@ const Button = ({ children, ...props }) => {
   let link
   let path;
 
-
-
-
   const isExternalLink = props.node?.link && !props.node.link_type
   let internalLink
 
