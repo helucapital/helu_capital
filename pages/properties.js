@@ -47,7 +47,7 @@ const Properties = ({ data }) => {
             "@bp1": { textAlign: "center" },
           }}
         >
-          Active Acquisitions
+          Active Projects
         </Text>
         <Box
           css={{
@@ -124,7 +124,7 @@ const Properties = ({ data }) => {
             "@bp1": { textAlign: "center" },
           }}
         >
-          Completed Acquisitions
+          Completed Projects
         </Text>
 
         <Box
