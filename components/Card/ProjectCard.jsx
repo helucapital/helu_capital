@@ -15,7 +15,10 @@ const ProjectCard = (data) => {
   return (
     <Modal data={data}>
       <Styled.ProjectCard>
-        <img src={urlFor(image).width(500).url()} />
+        <Box css={{ height: '300px', '@bp2': { width: '100%' } }}>
+
+          <img src={urlFor(image).width(500).url()} />
+        </Box>
         <Box css={{ display: 'flex', mt: '$3', flexDirection: 'column' }}>
           <Box css={{ display: 'flex', jc: 'space-between', ai: 'center' }}>
             <Text css={{ color: '$primary' }} as="h4">{name}</Text>

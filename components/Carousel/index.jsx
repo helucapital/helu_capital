@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -17,12 +17,20 @@ import Box from '../Box'
 SwiperCore.use([Navigation, Autoplay]);
 // Import Swiper styles
 
-const Carousel = (data) => {
+const Carousel = (data, responsive) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, [])
+
   const { title, items, type } = data
 
   return (
     <Styled.CarouselSection>
       <Styled.Carousel
+        key={isClient ? 'client' : 'server'}
+
         spaceBetween={50}
         slidesPerView={1}
         navigation={true}
@@ -64,8 +72,8 @@ const Carousel = (data) => {
           }} as="h3">{title}</Text>
         </Box>
 
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>
+        {items.map((item) => (
+          <SwiperSlide key={item._id}>
             <Card type={type}  {...item} />
           </SwiperSlide>
         ))}
